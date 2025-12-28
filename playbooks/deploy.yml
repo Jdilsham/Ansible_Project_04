@@ -1,0 +1,10 @@
+---
+- name: Secure multi-environment deployment
+  hosts: web
+  become: true
+
+  vars_files:
+    - "../vault/{{ inventory_dir | basename }}.yml"
+
+  roles:
+    - app
